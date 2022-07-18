@@ -56,7 +56,7 @@ class HomeTableViewController: UITableViewController {
 //        return 3  // 한 줄 일 때는 return 생략가능한데 잘 안 함
 //        100
     }
-
+ 
     // 2. 셀의 디자인과 데이터(필수)
     // ex. 카톡 이점팔, 프로필 사진, 상태 메시지 등
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
