@@ -101,13 +101,26 @@ class SettingsTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath == (0, 0) {
+//            print("0, 0")
+//        }
+        print(indexPath)
+        
+        if indexPath == [1, 4] {
+            print("집중 모드 클릭")
+//            concentrationModeButtonClicked()  // X
+//            self.concentrationModeButtonClicked(concentrationModeButton)  // X
+            
+            // 버튼에 액션 보내기
+            concentrationModeButton.sendActions(for: .touchUpInside)
+        }
+    }
 
     
 
 //    @IBAction func concentrationModeButtonClicked() {
     @IBAction func concentrationModeButtonClicked(_ sender: UIButton) {        
         print(#function)
-        
     }
 }
