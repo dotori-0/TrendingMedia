@@ -9,7 +9,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
-    enum Settings: String {
+    enum Settings: String, CaseIterable {
         case general = "전체 설정"
         case personal = "개인 설정"
         case other = "기타"
@@ -55,29 +55,33 @@ class SettingsTableViewController: UITableViewController {
     
     // 섹션 헤더
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-            case 0:
-                return Settings.general.rawValue
-            case 1:
-                return Settings.personal.rawValue
-            case 2:
-                return Settings.other.rawValue
-            default:
-                return "오류"
-        }
+//        switch section {
+//            case 0:
+//                // return Settings.general.rawValue
+//                return Settings.allCases[section].rawValue
+//            case 1:
+//                return Settings.personal.rawValue
+//            case 2:
+//                return Settings.other.rawValue
+//            default:
+//                return "오류"
+//        }
+        return Settings.allCases[section].rawValue
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-            case 0:
-                return Settings.general.settingTitles().count
-            case 1:
-                return Settings.personal.settingTitles().count
-            case 2:
-                return Settings.other.settingTitles().count
-            default:
-                return 0
-        }
+//        switch section {
+//            case 0:
+////                return Settings.general.settingTitles().count
+//                return Settings.allCases[section].settingTitles().count
+//            case 1:
+//                return Settings.personal.settingTitles().count
+//            case 2:
+//                return Settings.other.settingTitles().count
+//            default:
+//                return 0
+//        }
+        return Settings.allCases[section].settingTitles().count
     }
     
     
@@ -85,18 +89,19 @@ class SettingsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
         cell.textLabel?.font = .systemFont(ofSize: 13)
         
-        switch indexPath.section {
-            case 0:
-//                for i in 0..<Settings.general.settingTitles().count {
-                    cell.textLabel?.text = Settings.general.settingTitles()[indexPath.row]
-//                }
-            case 1:
-                cell.textLabel?.text = Settings.personal.settingTitles()[indexPath.row]
-            case 2:
-                cell.textLabel?.text = Settings.other.settingTitles()[indexPath.row]
-            default:
-                print("Error")
-        }
+//        switch indexPath.section {
+//            case 0:
+////                for i in 0..<Settings.general.settingTitles().count {
+//                    cell.textLabel?.text = Settings.general.settingTitles()[indexPath.row]
+////                }
+//            case 1:
+//                cell.textLabel?.text = Settings.personal.settingTitles()[indexPath.row]
+//            case 2:
+//                cell.textLabel?.text = Settings.other.settingTitles()[indexPath.row]
+//            default:
+//                print("Error")
+//        }
+        cell.textLabel?.text = Settings.allCases[indexPath.section].settingTitles()[indexPath.row]
         
         return cell
     }
