@@ -15,6 +15,8 @@
 		0A457EE22886CA610003A12E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A457EE12886CA610003A12E /* UIColor+Extension.swift */; };
 		0A457EE52886CD5F0003A12E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A457EE42886CD5F0003A12E /* UIButton+Extension.swift */; };
 		0A457EE72886DA790003A12E /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A457EE62886DA790003A12E /* UIImageView+Extension.swift */; };
+		0A457EE92886EAD70003A12E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A457EE82886EAD70003A12E /* SearchTableViewController.swift */; };
+		0A457EEB2886FB5D0003A12E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A457EEA2886FB5D0003A12E /* SearchTableViewCell.swift */; };
 		0A8E2A622884F10F0042442C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E2A612884F10F0042442C /* Home.storyboard */; };
 		0A8E2A642884FE340042442C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E2A632884FE340042442C /* HomeTableViewController.swift */; };
 		0A8E2A6628850FD00042442C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A8E2A6528850FD00042442C /* Settings.storyboard */; };
@@ -45,6 +47,8 @@
 		0A457EE12886CA610003A12E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		0A457EE42886CD5F0003A12E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		0A457EE62886DA790003A12E /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		0A457EE82886EAD70003A12E /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		0A457EEA2886FB5D0003A12E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		0A8E2A612884F10F0042442C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		0A8E2A632884FE340042442C /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		0A8E2A6528850FD00042442C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -97,7 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				0A8E2A69288640250042442C /* Search.storyboard */,
+				0A457EE82886EAD70003A12E /* SearchTableViewController.swift */,
 				0A8E2A71288644180042442C /* SearchViewController.swift */,
+				0A457EEA2886FB5D0003A12E /* SearchTableViewCell.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -252,9 +258,11 @@
 				0A2EF0F42886A1230052B607 /* ShoppingTableViewController.swift in Sources */,
 				0A457EE52886CD5F0003A12E /* UIButton+Extension.swift in Sources */,
 				0A457EE22886CA610003A12E /* UIColor+Extension.swift in Sources */,
+				0A457EE92886EAD70003A12E /* SearchTableViewController.swift in Sources */,
 				0A457EE02886C8370003A12E /* UIView+Extension.swift in Sources */,
 				0A8E2A7A28864DA00042442C /* BucketListTableViewCell.swift in Sources */,
 				0A8E2A7828864BAC0042442C /* BucketListTableViewController.swift in Sources */,
+				0A457EEB2886FB5D0003A12E /* SearchTableViewCell.swift in Sources */,
 				0A8E2A742886451C0042442C /* UIViewController+Extension.swift in Sources */,
 				0A8E2A642884FE340042442C /* HomeTableViewController.swift in Sources */,
 				0A8E2A72288644180042442C /* SearchViewController.swift in Sources */,
