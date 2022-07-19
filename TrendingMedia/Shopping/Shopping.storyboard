@@ -40,17 +40,28 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6z-4t-1Bm">
-                                    <rect key="frame" x="20" y="20" width="374" height="45"/>
+                                    <rect key="frame" x="20" y="20" width="286.5" height="45"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHX-Rz-wP6">
+                                    <rect key="frame" x="326.5" y="20" width="67.5" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="vHX-Rz-wP6" secondAttribute="height" multiplier="1.5" id="uLE-rQ-KHG"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="M6z-4t-1Bm" firstAttribute="top" secondItem="gy4-MO-eRb" secondAttribute="top" constant="20" id="2I0-Jo-NzO"/>
+                                <constraint firstItem="vHX-Rz-wP6" firstAttribute="centerY" secondItem="M6z-4t-1Bm" secondAttribute="centerY" id="G7g-Zj-YaC"/>
+                                <constraint firstAttribute="trailing" secondItem="vHX-Rz-wP6" secondAttribute="trailing" constant="20" id="PKv-qP-d7I"/>
+                                <constraint firstItem="M6z-4t-1Bm" firstAttribute="leading" secondItem="gy4-MO-eRb" secondAttribute="leading" constant="20" id="WKW-IJ-DDh"/>
                                 <constraint firstAttribute="bottom" secondItem="M6z-4t-1Bm" secondAttribute="bottom" constant="20" id="baH-dH-WkL"/>
-                                <constraint firstItem="M6z-4t-1Bm" firstAttribute="leading" secondItem="gy4-MO-eRb" secondAttribute="leading" constant="20" id="oUT-of-Nhl"/>
-                                <constraint firstAttribute="trailing" secondItem="M6z-4t-1Bm" secondAttribute="trailing" constant="20" id="pgV-an-t63"/>
+                                <constraint firstItem="vHX-Rz-wP6" firstAttribute="height" secondItem="M6z-4t-1Bm" secondAttribute="height" id="cja-T7-hBP"/>
+                                <constraint firstItem="vHX-Rz-wP6" firstAttribute="leading" secondItem="M6z-4t-1Bm" secondAttribute="trailing" constant="20" id="oUT-of-Nhl"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -69,6 +80,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="쇼핑" id="vTm-8O-MGQ"/>
+                    <connections>
+                        <outlet property="addButton" destination="vHX-Rz-wP6" id="Fhj-mT-xNt"/>
+                        <outlet property="textField" destination="M6z-4t-1Bm" id="4Ca-6g-WSZ"/>
+                        <outlet property="textFieldContainerView" destination="gy4-MO-eRb" id="Ke5-eS-HkL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cry-FO-Nbv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Q7T-U8-5Qj">
