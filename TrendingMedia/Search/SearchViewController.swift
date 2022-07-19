@@ -12,9 +12,10 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 수업
         // 배경색, 카톡 브랜드 컬러 (노랑) > 초록!
+//        setBackgroundColor()
         
-        setBackgroundColor()
     }
     
 

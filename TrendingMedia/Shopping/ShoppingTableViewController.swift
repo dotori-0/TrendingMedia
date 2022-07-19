@@ -27,6 +27,8 @@ class ShoppingTableViewController: UITableViewController {
         addButton.configureButtonDesign()
         addButton.setTitle("추가", for: .normal)
         addButton.setTitleColor(.label, for: .normal)
+        
+        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
 
     }
 
@@ -58,13 +60,9 @@ class ShoppingTableViewController: UITableViewController {
         let checkImageView = cell.checkImageView!
         let starButton = cell.starButton!
         
-        checkImageView.image = UIImage(systemName: "checkmark.square")
-        checkImageView.tintColor = .label
+        checkImageView.showCheckState(checked: indexPath.row == 0 ? true : false)
         cell.label.text = shoppingList[indexPath.row]
-        starButton.setImage(UIImage(systemName: "star"), for: .normal)
-//        cell.starButton.imageView!.image = UIImage(systemName: "star")
-        starButton.setTitle("", for: .normal)
-        starButton.tintColor = .label
+        starButton.showFavoriteState(isFavorite: indexPath.row == 1 ? false : true)
         
         return cell
     }
@@ -82,14 +80,19 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
     
+    func addToChecklist() {
+        shoppingList.append(textField.text!)
+        tableView.reloadData()
+    }
+    
     
     @IBAction func textFieldReturnTapped(_ sender: UITextField) {
-        shoppingList.append(sender.text!)
-        tableView.reloadData()
+        addToChecklist()
     }
     
     
     @IBAction func addButtonClicked(_ sender: UIButton) {
         print(#function)
+        addToChecklist()
     }
 }

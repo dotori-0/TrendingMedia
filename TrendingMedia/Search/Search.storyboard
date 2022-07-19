@@ -3,49 +3,62 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--타이틀-->
-        <scene sceneID="s0d-6b-0kx">
-            <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SearchViewController" customModule="TrendingMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="타이틀" id="h1n-JT-X7A">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="DVm-Ql-v3w" customClass="search"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="829" y="60"/>
-        </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="pLR-BX-kb7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j1G-vC-0yf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="j1G-vC-0yf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="film" catalog="system" id="NTC-fy-U1z"/>
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="drL-qd-NrH">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="tjb-ag-gEr"/>
+                        <segue destination="EuP-sI-IE6" kind="relationship" relationship="rootViewController" id="DPG-rw-xPt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0h-5B-IoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="71.014492753623188" y="59.598214285714285"/>
         </scene>
+        <!--Search View-->
+        <scene sceneID="aQj-ND-Ti7">
+            <objects>
+                <tableViewController id="EuP-sI-IE6" customClass="SearchView" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oMn-0i-moQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B50-8d-eIM">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B50-8d-eIM" id="cCJ-xd-frq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EuP-sI-IE6" id="Qse-Jp-iJZ"/>
+                            <outlet property="delegate" destination="EuP-sI-IE6" id="1v3-AV-Xpt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7kT-gp-2mn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vLb-6W-dZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="60"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="film" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
