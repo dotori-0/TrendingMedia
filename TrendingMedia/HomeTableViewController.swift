@@ -14,6 +14,8 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = 80
 
     }
 
@@ -59,7 +61,36 @@ class HomeTableViewController: UITableViewController {
  
     // 2. 셀의 디자인과 데이터(필수)
     // ex. 카톡 이점팔, 프로필 사진, 상태 메시지 등
+    // 재사용 메커니즘  // 셀이 화면에 보일 때마다 호출
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print("cellForRowAt", indexPath)
+        
+        
+        if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell")!  // 재사용 메커니즘이 여기에서 사용됨
+            cell.textLabel?.text = "1번 인덱스 섹션의 텍스트"
+            cell.textLabel?.textColor = .brown
+            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+            
+            // indexPath.row % 2 == 0, 1
+            // 두 개의 조건에 많은 것을 바꿀 때는 if-else 사용해도 O
+            if indexPath.row % 2 == 0 {
+                cell.imageView?.image = UIImage(systemName: "star")
+                cell.backgroundColor = .lightGray
+            } else {
+                cell.imageView?.image = UIImage(systemName: "star.fill")
+                cell.backgroundColor = .white
+            }
+            
+            // 간단하게 조건 판단할 때는 삼항연산자 
+            cell.imageView?.image = indexPath.row % 2 == 0 ? UIImage(systemName: "star") : UIImage(systemName: "star.fill")
+            
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white
+
+            
+            return cell
+        }
 
         // 셀 x 100
         // Identifier 대소문자 주의
@@ -81,11 +112,21 @@ class HomeTableViewController: UITableViewController {
             cell.textLabel?.textColor = .systemPink
             cell.textLabel?.font = .italicSystemFont(ofSize: 25)
         } else if indexPath.section == 2 {
-            cell.textLabel?.text = "1번 인덱스 섹션의 텍스트"
-            cell.textLabel?.textColor = .brown
-            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+//            cell.textLabel?.text = "1번 인덱스 섹션의 텍스트"
+//            cell.textLabel?.textColor = .brown
+//            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
         }
 
         return cell
+    }
+    
+    // 셀의 높이(옵션, 빈도 높은 함수)(feat. tableView.rowHeight)  // 여기가 더 우선하긴 한다
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath == [0, 0] {
+            return 80
+        }
+        
+        return 44
     }
 }

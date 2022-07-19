@@ -7,8 +7,37 @@
 
 import UIKit
 
+// 수업
+// CaseIterable: 프로토콜, 배열처럼 열거형을 활용할 수 있는 특성
+enum SettingOptions: Int, CaseIterable {
+    case total, personal, others  // 섹션
+    
+    var sectionTitle: String {
+        switch self {  // 자동완성
+            case .total:
+                return "전체 설정"
+            case .personal:
+                return "개인 설정"
+            case .others:
+                return "기타"
+        }
+    }
+    
+    var rowTitle: [String] {
+        switch self {  // 자동완성
+            case .total:
+                return ["공지사항", "실험실", "버전 정보"]
+            case .personal:
+                return ["개인/보안", "알림", "채팅", "멀티프로필", "집중 모드"]
+            case .others:
+                return ["고객센터/도움말"]
+        }
+    }
+}
+
 class SettingsTableViewController: UITableViewController {
     
+    // 클래스 안에 해도 되고, 여러 화면에 사용할 것 같으면 클래스 밖에
     enum Settings: String, CaseIterable {
         case general = "전체 설정"
         case personal = "개인 설정"
@@ -49,7 +78,10 @@ class SettingsTableViewController: UITableViewController {
 
     // 섹션 갯수
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+//        return 3
+        
+        // 수업
+        return SettingOptions.allCases.count
     }
     
     
@@ -66,7 +98,12 @@ class SettingsTableViewController: UITableViewController {
 //            default:
 //                return "오류"
 //        }
-        return Settings.allCases[section].rawValue
+//        return Settings.allCases[section].rawValue
+        
+        // 수업
+        return SettingOptions.allCases[section].sectionTitle
+        
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,7 +118,12 @@ class SettingsTableViewController: UITableViewController {
 //            default:
 //                return 0
 //        }
-        return Settings.allCases[section].settingTitles().count
+        
+//        return Settings.allCases[section].settingTitles().count
+        
+        // 수업
+        return SettingOptions.allCases[section].rowTitle.count
+
     }
     
     
@@ -101,7 +143,10 @@ class SettingsTableViewController: UITableViewController {
 //            default:
 //                print("Error")
 //        }
-        cell.textLabel?.text = Settings.allCases[indexPath.section].settingTitles()[indexPath.row]
+//        cell.textLabel?.text = Settings.allCases[indexPath.section].settingTitles()[indexPath.row]
+        
+        // 수업
+        cell.textLabel?.text = SettingOptions.allCases[indexPath.section].rowTitle[indexPath.row]
         
         return cell
     }
