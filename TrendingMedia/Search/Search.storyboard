@@ -34,7 +34,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oMn-0i-moQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.71036793139999999" green="0.76200838589999997" blue="0.92149305339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="zp3-qv-JH9">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -101,7 +101,7 @@
                                                 <constraint firstAttribute="width" secondItem="VhM-d0-Cet" secondAttribute="height" multiplier="1:1.414" id="ykD-au-Hwx"/>
                                             </constraints>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pqT-3V-Ede">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="pqT-3V-Ede">
                                             <rect key="frame" x="98.5" y="6.5" width="307.5" height="117"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sa-OW-k0n">

@@ -33,9 +33,14 @@ class SearchTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath) as! SearchTableViewCell
         
         let row = indexPath.row
+        cell.movieTitleLabel.font = .boldSystemFont(ofSize: 16)
         cell.movieTitleLabel.text = movieArray[row].title
         cell.posterImageView.image = UIImage(named: movieArray[row].posterImageName)
+        cell.releaseDateLabel.font = .systemFont(ofSize: 13)
         cell.releaseDateLabel.text = movieArray[row].releaseDate
+        cell.plotLabel.textColor = .systemGray
+        cell.plotLabel.font = .systemFont(ofSize: 13)
+        cell.plotLabel.numberOfLines = 0
         cell.plotLabel.text = movieArray[row].plot
         // 더 줄일 수는 없는지?
         
