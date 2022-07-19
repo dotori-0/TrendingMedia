@@ -7,8 +7,8 @@
 
 import UIKit
 
-extension UIView {
-    func configureViewDesign() {
+extension UITableViewCell {
+    func configureTableViewCellDesign() {
         self.backgroundColor = UIColor(named: "CellBackgroundColor")
         self.layer.cornerRadius = 8
 //        self.clipsToBounds = true
