@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,10 +32,10 @@
         <scene sceneID="aQj-ND-Ti7">
             <objects>
                 <tableViewController id="EuP-sI-IE6" customClass="SearchTableViewController" customModule="TrendingMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oMn-0i-moQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oMn-0i-moQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.71036793139999999" green="0.76200838589999997" blue="0.92149305339999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="SearchViewTopColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="zp3-qv-JH9">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,7 +65,7 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" name="SearchViewTextFieldColor"/>
                                     <constraints>
                                         <constraint firstItem="Jaq-uS-4hV" firstAttribute="height" secondItem="PwS-4C-Kku" secondAttribute="height" multiplier="0.6" id="88N-SY-gy6"/>
                                         <constraint firstItem="vlh-4c-XRq" firstAttribute="centerY" secondItem="PwS-4C-Kku" secondAttribute="centerY" id="HbW-Ny-9pb"/>
@@ -76,7 +77,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="SearchViewTopColor"/>
                             <constraints>
                                 <constraint firstItem="Uq9-30-yzb" firstAttribute="centerY" secondItem="zp3-qv-JH9" secondAttribute="centerY" id="8vv-0o-JM6"/>
                                 <constraint firstItem="Uq9-30-yzb" firstAttribute="height" secondItem="zp3-qv-JH9" secondAttribute="height" multiplier="0.4" id="NFt-OW-3Ue"/>
@@ -163,11 +164,14 @@
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="SearchViewTextFieldColor">
+            <color red="0.82300001382827759" green="0.84799998998641968" blue="0.87300002574920654" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SearchViewTopColor">
+            <color red="0.9179999828338623" green="0.92000001668930054" blue="0.95200002193450928" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
