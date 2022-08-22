@@ -7,13 +7,21 @@
 
 import UIKit
 
+import RealmSwift
+
+
 class ShoppingTableViewController: UITableViewController {
+    
+    let localRealm = try! Realm()
 
     @IBOutlet weak var textFieldContainerView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
     var shoppingList = ["그립톡 구매하기", "세숑이 밥 주기", "아이패드 케이스 최저가 알아보기", "양말"]
+    
+    var shoppingItems: Results<ShoppingItem>!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +38,10 @@ class ShoppingTableViewController: UITableViewController {
         
 //        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         // 넣으면 테이블 뷰의 사이즈는 그대로고 가로 스크롤이 생김
-
+        
+        
+        // Realm
+        shoppingItems = localRealm.objects(ShoppingItem.self)
     }
 
     // 섹션 갯수
@@ -50,7 +61,8 @@ class ShoppingTableViewController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingList.count 
+//        return shoppingList.count
+        return shoppingItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,9 +73,14 @@ class ShoppingTableViewController: UITableViewController {
         let checkImageView = cell.checkImageView!
         let starButton = cell.starButton!
         
-        checkImageView.showCheckState(checked: indexPath.row == 0 ? true : false)
-        cell.label.text = shoppingList[indexPath.row]
-        starButton.showFavoriteState(isFavorite: indexPath.row == 1 ? false : true)
+//        checkImageView.showCheckState(checked: indexPath.row == 0 ? true : false)
+//        cell.label.text = shoppingList[indexPath.row]
+//        starButton.showFavoriteState(isFavorite: indexPath.row == 1 ? false : true)
+        
+        let item = shoppingItems[indexPath.row]
+        checkImageView.showCheckState(checked: item.isDone ? true : false)
+        cell.label.text = item.title
+        starButton.showFavoriteState(isFavorite: item.isFavorite ? true: false)
         
         return cell
     }
@@ -82,7 +99,15 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     func addToChecklist() {
-        shoppingList.append(textField.text!)
+        print(#function)
+//        shoppingList.append(textField.text!)
+        let item = ShoppingItem(item: textField.text!)  // Record
+        try! localRealm.write {
+            localRealm.add(item)
+            print("Realm Succeeded")
+            textField.text = nil
+        }
+        
         tableView.reloadData()
     }
     
