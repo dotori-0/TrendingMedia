@@ -15,11 +15,13 @@ class SearchMovieTableViewCell: UITableViewCell {
     @IBOutlet weak var overviewLabel: UILabel!
     
     
+    /// 셀에 데이터를 넣어주는 역할
+    /// - Parameter data: 영화 정보가 들어 있음
     func configureCell(data: Movie) {
         titleLabel.font = .boldSystemFont(ofSize: 15)
         titleLabel.text = data.title
         releaseLabel.text = "2222. 22. 22"
-        releaseLabel.text = "\(data.releaseDate) | \(data.runtime)분 | \(data.rate)점"
+        releaseLabel.text = data.movieDescription
         overviewLabel.text = data.overview
         overviewLabel.numberOfLines = 0
     }

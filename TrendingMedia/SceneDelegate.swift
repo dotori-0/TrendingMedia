@@ -13,10 +13,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        /*
+        guard let scene = (scene as? UIWindowScene) else { return }  // 디폴트
+        window = UIWindow(windowScene: scene)
+        
+        UserDefaults.standard.set(false, forKey: "First")  // >> 다른 화면에 배치해야 함
+        
+        // true면 WelclomeViewController, false면 SearchMovieTableViewController
+        if UserDefaults.standard.bool(forKey: "First") {
+            // 가장 첫번째에 뜰 화면
+            let sb = UIStoryboard(name: "Trending", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "WelclomeViewController") as! WelclomeViewController  // guard-let이나 if-let으로 감싸주는 것이 안전하다
+            
+//            window?.rootViewController = vc
+            window?.rootViewController = UINavigationController(rootViewController: vc)  // 네비게이션 컨트롤러 붙이기 가능
+        } else {
+            // 가장 첫번째에 뜰 화면
+            let sb = UIStoryboard(name: "Shopping-Lecture", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "SearchMovieTableViewController") as! SearchMovieTableViewController  // guard-let이나 if-let으로 감싸주는 것이 안전하다
+            
+//            window?.rootViewController = vc
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+        }
+            
+        
+        window?.makeKeyAndVisible()  // 윈도우가 디바이스에 보여지도록 한다
+        */
+        
+        guard let _ = (scene as? UIWindowScene) else { return }  // 디폴트
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

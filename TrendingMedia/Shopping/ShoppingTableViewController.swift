@@ -28,7 +28,8 @@ class ShoppingTableViewController: UITableViewController {
         addButton.setTitle("추가", for: .normal)
         addButton.setTitleColor(.label, for: .normal)
         
-        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+//        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+        // 넣으면 테이블 뷰의 사이즈는 그대로고 가로 스크롤이 생김
 
     }
 

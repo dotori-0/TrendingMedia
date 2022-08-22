@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j1G-vC-0yf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOm-iC-rMA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,11 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Navigation Controller-->
         <scene sceneID="pLR-BX-kb7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="j1G-vC-0yf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="film" catalog="system" id="NTC-fy-U1z"/>
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -20,15 +19,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="EuP-sI-IE6" kind="relationship" relationship="rootViewController" id="DPG-rw-xPt"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0h-5B-IoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71.014492753623188" y="59.598214285714285"/>
+            <point key="canvasLocation" x="-126" y="60"/>
         </scene>
-        <!--Search Table View Controller-->
+        <!--wekjnfjkwe-->
         <scene sceneID="aQj-ND-Ti7">
             <objects>
                 <tableViewController id="EuP-sI-IE6" customClass="SearchTableViewController" customModule="TrendingMedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -149,7 +145,7 @@
                             <outlet property="delegate" destination="EuP-sI-IE6" id="1v3-AV-Xpt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7kT-gp-2mn"/>
+                    <navigationItem key="navigationItem" title="wekjnfjkwe" id="7kT-gp-2mn"/>
                     <connections>
                         <outlet property="searchTextField" destination="Jaq-uS-4hV" id="aws-UG-oHq"/>
                         <outlet property="textFieldContainerView" destination="PwS-4C-Kku" id="Iaz-Ps-XOI"/>
@@ -157,7 +153,27 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLb-6W-dZ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844.92753623188412" y="59.598214285714285"/>
+            <point key="canvasLocation" x="1755.072463768116" y="59.598214285714285"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="tyc-E4-k3w">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HOm-iC-rMA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="film" catalog="system" id="NTC-fy-U1z"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cn8-Jm-sTN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EuP-sI-IE6" kind="relationship" relationship="rootViewController" id="YEt-cF-6uc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5am-gE-L5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="60"/>
         </scene>
     </scenes>
     <resources>
